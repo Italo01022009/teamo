@@ -16,9 +16,9 @@ interface Profile {
   nome: string;
   email: string;
   tipo: "profissional" | "responsavel";
-  avatar_url?: string;
-  bio?: string;
-  especialidade?: string;
+  avatar_url: string | null;
+  bio: string | null;
+  especialidade: string | null;
 }
 
 export default function PerfilPage() {
