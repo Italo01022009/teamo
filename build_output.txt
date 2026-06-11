@@ -1,0 +1,27 @@
+
+> teamo@0.1.0 build
+> next build
+
+▲ Next.js 16.2.6 (Turbopack)
+- Environments: .env.local, .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 33.4s
+  Running TypeScript ...
+Failed to type check.
+
+./app/app/perfil/page.tsx:130:15
+Type error: No overload matches this call.
+  Overload 1 of 2, '(relation: "children" | "profiles" | "child_professionals" | "routines" | "sessions"): PostgrestQueryBuilder<{ PostgrestVersion: "14.5"; }, { Tables: { child_professionals: { Row: { child_id: string; created_at: string; id: string; profissional_id: string; responsavel_id: string; }; Insert: { ...; }; Update: { ...; }; Relationships: [...]; }; children: { ...; }; profiles: { ...; }; routines: { ...; }; sessions: { ...; }; }; Views: {}; Functions: { ...; }; Enums: { ...; }; CompositeTypes: {}; }, { ...; } | ... 3 more ... | { ...; }, "children" | ... 3 more ... | "sessions", [...] | ... 3 more ... | [...]>', gave the following error.
+    Argument of type '"feedback"' is not assignable to parameter of type '"children" | "profiles" | "child_professionals" | "routines" | "sessions"'.
+  Overload 2 of 2, '(relation: never): PostgrestQueryBuilder<{ PostgrestVersion: "14.5"; }, { Tables: { child_professionals: { Row: { child_id: string; created_at: string; id: string; profissional_id: string; responsavel_id: string; }; Insert: { ...; }; Update: { ...; }; Relationships: [...]; }; children: { ...; }; profiles: { ...; }; routines: { ...; }; sessions: { ...; }; }; Views: {}; Functions: { ...; }; Enums: { ...; }; CompositeTypes: {}; }, never, never, never>', gave the following error.
+    Argument of type '"feedback"' is not assignable to parameter of type 'never'.
+
+  [90m128 |[0m     [36mtry[0m {
+  [90m129 |[0m       [36mconst[0m { error } = [36mawait[0m supabase
+[31m[1m>[0m [90m130 |[0m         .[36mfrom[0m([32m"feedback"[0m)
+  [90m    |[0m               [31m[1m^[0m
+  [90m131 |[0m         .insert({
+  [90m132 |[0m           profissional_id: profile.id,
+  [90m133 |[0m           conteudo: feedbackText.trim(),
+Next.js build worker exited with code: 1 and signal: null
